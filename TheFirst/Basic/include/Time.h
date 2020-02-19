@@ -6,17 +6,26 @@ namespace basic {
 class Time {
 
 private:
-    int year;
-    int month;
-    int day;
-    int hour;
-    int minute;
-    int second;
+    short year;
+    short month;
+    short day;
+    short hour;
+    short minute;
+    short second;
 
 public:
-    Time(/* args */);
+    enum Type {
+        YYYYMMDD,
+        YYYYMMDDHHMMSS,
+        HHMMSS,
+        HHMMSSYYYYMMDD
+    };
+    Time();
     ~Time();
     void printTime();
+    void printTime(Type);
+    void printYYYYMMDD();
+    void printHHMMSS();
 };
 
 }

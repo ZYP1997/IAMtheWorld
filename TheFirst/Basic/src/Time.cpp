@@ -1,6 +1,10 @@
 #include "Basic.h"
 
-basic::Time::Time(/* args */)
+using namespace std;
+
+namespace basic {
+
+Time::Time(/* args */)
 {
     year = 2020;
     month = 1;
@@ -10,11 +14,75 @@ basic::Time::Time(/* args */)
     second = 0;
 }
 
-basic::Time::~Time()
+Time::~Time()
 {
 }
 
-void basic::Time::printTime()
+void Time::printTime()
 {
-    std::cout << year << "-" << month << "-" << day << " " << hour << ":" << minute << ":" << second << std::endl;
+    printTime(Type::YYYYMMDDHHMMSS);
+}
+
+void Time::printTime(Time::Type type)
+{
+    switch (type) {
+    case Type::YYYYMMDD: {
+        printYYYYMMDD();
+        cout << endl;
+        break;
+    }
+    case Type::HHMMSS: {
+        printHHMMSS();
+        cout << endl;
+        break;
+    }
+    case Type::YYYYMMDDHHMMSS: {
+        printYYYYMMDD();
+        cout << " ";
+        printHHMMSS();
+        cout << endl;
+        break;
+    }
+    case Type::HHMMSSYYYYMMDD: {
+        printHHMMSS();
+        cout << " ";
+        printYYYYMMDD();
+        cout << endl;
+        break;
+    }
+
+    default:
+        break;
+    }
+}
+
+void Time::printYYYYMMDD()
+{
+    cout << year << "-";
+    if (month < 10) {
+        cout << "0";
+    }
+    cout << month << "-";
+    if (day < 10) {
+        cout << "0";
+    }
+    cout << day;
+}
+
+void Time::printHHMMSS()
+{
+    if (hour < 10) {
+        cout << "0";
+    }
+    cout << hour << ":";
+    if (minute < 10) {
+        cout << "0";
+    }
+    cout << minute << ":";
+    if (second < 10) {
+        cout << "0";
+    }
+    cout << second;
+}
+
 }

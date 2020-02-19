@@ -1,20 +1,21 @@
 #include "Basic.h"
 
 using namespace std;
+using namespace basic;
 
 int main()
 {
 
-#ifdef WINDOWS
+#ifdef ZYP
     cout << "Hello World! ZYP!" << endl;
-
 #else
+#ifdef OTHERS
     cout << "Hello! Who are You?" << endl;
-
+#endif
 #endif
 
-    basic::BasicInfo basicInfo;
-    basicInfo.printTime();
+    BasicInfo basicInfo;
+    basicInfo.printTime(Time::YYYYMMDDHHMMSS);
 
     return 0;
 }
