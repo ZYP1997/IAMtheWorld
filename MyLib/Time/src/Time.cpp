@@ -15,6 +15,6 @@ Time::~Time()
 string Time::getTime()
 {
     char buf[10];
-    sprintf(buf, "%d:%d:%d", hour, minute, second);
+    sprintf(buf, "%.2d:%.2d:%.2d", hour, minute, second);
     return buf;
 }
