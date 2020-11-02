@@ -16,6 +16,7 @@ public:
     ~Object();
 
     string getName();
+    void setName(const string&);
 };
 
 #endif

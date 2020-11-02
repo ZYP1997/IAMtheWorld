@@ -14,3 +14,8 @@ string Object::getName()
 {
     return name;
 }
+
+void Object::setName(const string& str)
+{
+    name = str;
+}
