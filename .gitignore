@@ -1,6 +1,7 @@
 .vscode
 *.a
 *.so
+*.dat
 *.dll
 *.exe
 **/build/*

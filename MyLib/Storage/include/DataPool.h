@@ -3,7 +3,7 @@
 
 #include <fstream>
 #include <iostream>
-#include "Object/include/Object.h"
+#include "Time/include/Timer.h"
 
 using namespace std;
 
@@ -20,9 +20,13 @@ private:
     static DataPool *dataPool;
     static DataGC dataGC;
 
+    
+
 public:
     ~DataPool();
     static DataPool *getInstance();
+
+    
 };
 
 #endif

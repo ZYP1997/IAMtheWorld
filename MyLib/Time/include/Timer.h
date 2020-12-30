@@ -10,6 +10,7 @@ private:
     
 public:
     Timer();
+    Timer(string);
     ~Timer();
 
     void Display();

@@ -1,9 +1,14 @@
 #include "Time/include/Timer.h"
 #include <iostream>
 
-Timer::Timer()
+Timer::Timer() : Time(time(0))
 {
     setName("Timer");
+}
+
+Timer::Timer(string str) : Time(time(0))
+{
+    setName(str);
 }
 
 Timer::~Timer()
@@ -13,6 +18,6 @@ Timer::~Timer()
 
 void Timer::Display()
 {
-    cout << getName() << endl;
+    cout << getName() << ": ";
     cout << getTime() << endl;
 }
