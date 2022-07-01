@@ -29,6 +29,6 @@ int main()
     cout << dataPool << endl;
     dataPool = DataPool::getInstance();
     cout << dataPool << endl;
-    //system("pause");
+    system("pause");
     return 0;
 }
